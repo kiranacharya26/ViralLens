@@ -59,12 +59,13 @@ const Footer: React.FC = () => {
           </div>
           <div>
             <h3 className="text-white text-lg font-bold mb-4">Company</h3>
-            <ul className="space-y-2">
-              <FooterLink href="#">About Us</FooterLink>
-              <FooterLink href="#">Sustainability</FooterLink>
-              <FooterLink href="#">Privacy Policy</FooterLink>
-              <FooterLink href="#">Terms of Service</FooterLink>
-            </ul>
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+              <a href="/about" className="block text-gray-600 hover:text-rose-600 transition-colors">About Us</a>
+              <a href="/products" className="block text-gray-600 hover:text-rose-600 transition-colors">Products</a>
+              <a href="/contact" className="block text-gray-600 hover:text-rose-600 transition-colors">Contact</a>
+              <a href="/blog" className="block text-gray-600 hover:text-rose-600 transition-colors">Blog</a>
+            </div>
           </div>
         </div>
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">

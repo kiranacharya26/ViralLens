@@ -24,7 +24,7 @@ const Feature: React.FC<FeatureProps> = ({
   listItems,
 }) => {
   const content = (
-    <div className="md:w-1/2 md:pr-12 mb-10 md:mb-0">
+    <div className="md:w-1/2 md:pr-12 mb-10 md:mb-0 px-12">
       <div className="bg-rose-100/50 p-2 inline-block rounded-full mb-6">
         <div className="bg-rose-600 w-14 h-14 rounded-full flex items-center justify-center">
           <i className={`fas ${icon} text-white text-2xl`}></i>

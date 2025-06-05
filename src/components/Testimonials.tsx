@@ -31,36 +31,34 @@ const Testimonial: React.FC<TestimonialProps> = ({ quote, name, role, image }) =
 const Testimonials: React.FC = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
-  useEffect(() => {
-    const testimonialInterval = setInterval(() => {
-      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
-
-    return () => {
-      clearInterval(testimonialInterval);
-    };
-  }, []);
-
   const testimonials = [
     {
-      quote: "LunaGlow's essential oils have transformed my skincare routine. My skin feels more hydrated, radiant, and youthful than ever. The overnight treatment oil is absolutely magical!",
-      name: "Ji-eun Kim",
-      role: "Beauty Influencer",
-      image: "https://readdy.ai/api/search-image?query=Beautiful%20Asian%20woman%20with%20glowing%20dewy%20skin%2C%20natural%20makeup%2C%20serene%20expression%2C%20soft%20lighting%2C%20clean%20beauty%20portrait%20against%20neutral%20background%2C%20korean%20beauty%20aesthetic&width=100&height=100&seq=16&orientation=squarish",
-    },
-    {
-      quote: "I've tried many luxury skincare brands, but LunaGlow stands out. The quality and results are exceptional. My skin has never looked better, and I love how the products feel on my skin!",
-      name: "Sarah Chen",
-      role: "Skincare Expert",
-      image: "https://readdy.ai/api/search-image?query=Professional%20young%20woman%20with%20natural%20makeup%2C%20confident%20smile%2C%20modern%20business%20attire%2C%20clean%20studio%20portrait%2C%20warm%20lighting%20against%20neutral%20background&width=100&height=100&seq=17&orientation=squarish",
-    },
-    {
-      quote: "The attention to detail in these products is remarkable. From the packaging to the formula, everything speaks luxury and effectiveness. My sensitive skin has never been happier!",
-      name: "Mei Zhang",
+      quote: "I've tried countless skincare products, but ViralLens has truly transformed my routine. The results are visible within weeks!",
+      name: "Sarah Johnson",
       role: "Beauty Blogger",
-      image: "https://readdy.ai/api/search-image?query=Elegant%20Asian%20beauty%20professional%20with%20sophisticated%20style%2C%20natural%20glow%2C%20minimal%20makeup%2C%20studio%20portrait%20with%20soft%20lighting%20against%20clean%20background&width=100&height=100&seq=18&orientation=squarish",
+      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80",
+    },
+    {
+      quote: "As a dermatologist, I'm impressed by the science behind ViralLens products. They're effective yet gentle on the skin.",
+      name: "Emily Chen",
+      role: "Dermatologist",
+      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80",
+    },
+    {
+      quote: "Even with my active lifestyle, these products keep my skin looking fresh and healthy. The lightweight formulas are perfect!",
+      name: "Michael Rodriguez",
+      role: "Fitness Trainer",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80",
     },
   ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTestimonial((prevIndex) => (prevIndex + 1) % testimonials.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [testimonials.length]);
 
   const goToTestimonial = (index: number) => {
     setCurrentTestimonial(index);

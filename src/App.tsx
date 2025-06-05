@@ -9,28 +9,31 @@ import CTA from './components/CTA';
 import Footer from './components/Footer';
 import Contact from './components/Contact';
 import Typography from './components/Typography';
+import { ThemeProvider } from './context/ThemeContext';
 
 const App: React.FC = () => {
   return (
-    <Router>
-      <div className="min-h-screen bg-white text-gray-800 font-sans">
-        <Header />
-        <Routes>
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/typography" element={<Typography />} />
-          <Route path="/" element={
-            <>
-              <Hero />
-              <Features />
-              <Products />
-              <Testimonials />
-              <CTA />
-            </>
-          } />
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <div className="min-h-screen bg-white text-gray-800 font-sans">
+          <Header />
+          <Routes>
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/typography" element={<Typography />} />
+            <Route path="/" element={
+              <>
+                <Hero />
+                <Features />
+                <Products />
+                <Testimonials />
+                <CTA />
+              </>
+            } />
+          </Routes>
+          <Footer />
+        </div>
+      </Router>
+    </ThemeProvider>
   );
 };
 
