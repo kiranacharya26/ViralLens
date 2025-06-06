@@ -13,11 +13,73 @@ LunaGlow is a sophisticated e-commerce platform that brings the essence of Korea
 - Implemented a clean, minimalist aesthetic with rose-themed color palette
 - Focused on user-friendly navigation and smooth transitions
 - Mobile-first approach with responsive design for all screen sizes
+- Custom favicon design featuring a moon symbol with rose gradient, representing the brand's identity
 
 ### AI-Generated Assets
 - Product and hero images generated using [Galileo AI](https://galileo.ai) and [DALL-E](https://openai.com/dall-e-2)
 - Images optimized for web performance while maintaining visual quality
 - Consistent visual style across all AI-generated assets
+
+## Technical Implementation
+
+### Frontend
+- React + TypeScript for robust type-safe development
+- Tailwind CSS for utility-first styling
+- Framer Motion for smooth animations
+- React Router for client-side routing
+- Custom favicon implementation with multiple formats:
+  - SVG for modern browsers
+  - PNG variants (16x16, 32x32) for legacy support
+  - Apple Touch Icon for iOS devices
+
+### Backend
+- Netlify Functions for serverless architecture
+- Simple REST API endpoints for contact form and messages
+- Environment variables for secure API key management
+
+### API Endpoints
+
+1. Contact Form Submission
+```http
+POST /api/contact
+Content-Type: application/json
+
+{
+  "name": "string",
+  "email": "string",
+  "message": "string"
+}
+
+Response:
+{
+  "success": true
+}
+```
+
+2. Messages Retrieval
+```http
+GET /api/messages
+
+Response:
+[
+  {
+    "name": "string",
+    "email": "string",
+    "message": "string",
+    "timestamp": "string"
+  }
+]
+```
+
+### API Testing & Debugging
+To test and debug the backend implementation:
+
+1. Open your browser's Developer Tools (F12 or right-click > Inspect)
+2. Navigate to the Network tab
+3. Filter by "Fetch/XHR" to see API calls
+4. Key endpoints to monitor:
+   - `/api/contact` - Contact form submissions
+   - `/api/messages` - Message retrieval
 
 ## Setup & Run
 
@@ -36,11 +98,6 @@ npm install
 ```env
 # Frontend Environment Variables
 VITE_API_URL=your_api_url
-VITE_STRIPE_PUBLIC_KEY=your_stripe_public_key
-
-# Backend Environment Variables
-STRIPE_SECRET_KEY=your_stripe_secret_key
-STRIPE_WEBHOOK_SECRET=your_stripe_webhook_secret
 ```
 
 4. Run the development server:
@@ -63,15 +120,18 @@ The application is deployed on Netlify and can be accessed at:
 - Netlify Functions for serverless backend operations
 - Optimized asset delivery with Netlify CDN
 - SSL/TLS encryption enabled
+- Custom domain configuration
+- Environment variable management through Netlify dashboard
 
 ## Tech Stack
 
 - React + TypeScript
 - Tailwind CSS
 - Netlify Functions
-- Stripe Integration
 - React Router
 - Framer Motion
+- Sharp (for image processing)
+- Node.js
 
 ## Contributing
 
