@@ -141,7 +141,7 @@ npx netlify dev
 ## Deployment
 
 The application is deployed on Netlify and can be accessed at:
-(lunaglow.netlify.app)
+(https://lunaglow.netlify.app/)
 
 ### Deployment Features
 - Automatic deployments from main branch
