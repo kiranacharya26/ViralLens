@@ -62,27 +62,44 @@ const Hero: React.FC = () => {
             src={img}
             alt={`Korean Beauty Background ${index + 1}`}
             loading="lazy"
-            className={`w-full h-full object-cover object-top absolute transition-opacity duration-1000 ${
+            className={`w-full h-full object-cover object-center absolute transition-opacity duration-1000 ${
               currentHeroImage === index && loadedImages[index] ? "opacity-100" : "opacity-0"
             }`}
           />
         ))}
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/20 to-transparent"></div>
       </div>
       <div className="container mx-auto px-6 relative h-full flex items-center">
         <div className="flex flex-col md:flex-row items-center">
-          <div className="md:w-1/2 text-center md:text-left mb-12 md:mb-0">
+          <div className="md:w-1/2 text-center md:text-left mb-12 md:mb-0 bg-white/30 backdrop-blur-sm p-8 rounded-2xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 leading-tight mb-6">
               Discover Korean Beauty Secrets
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 mb-10">
+            <p className="text-xl md:text-2xl text-gray-700 mb-4">
               Premium Essential Oils for Radiant, Glowing Skin
             </p>
+            <p className="text-lg text-gray-600 mb-8">
+              Experience the transformative power of nature's finest ingredients, carefully crafted to reveal your skin's natural radiance. Our Korean-inspired formulations combine ancient wisdom with modern science.
+            </p>
+            <div className="flex flex-wrap gap-4 mb-10">
+              <div className="flex items-center text-gray-700">
+                <i className="fas fa-check-circle text-rose-600 mr-2"></i>
+                <span>Natural Ingredients</span>
+              </div>
+              <div className="flex items-center text-gray-700">
+                <i className="fas fa-check-circle text-rose-600 mr-2"></i>
+                <span>Cruelty-Free</span>
+              </div>
+              <div className="flex items-center text-gray-700">
+                <i className="fas fa-check-circle text-rose-600 mr-2"></i>
+                <span>Dermatologist Tested</span>
+              </div>
+            </div>
             <div className="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
               <button className="bg-rose-600 hover:bg-rose-700 text-white px-8 py-3 text-lg font-medium !rounded-button cursor-pointer whitespace-nowrap transition-all transform hover:scale-105">
                 Shop Now
               </button>
-              <button className="bg-transparent border-2 border-rose-600 text-rose-600 px-8 py-3 text-lg font-medium !rounded-button cursor-pointer whitespace-nowrap hover:bg-rose-50 transition-all transform hover:scale-105">
+              <button className="bg-white/80 backdrop-blur-sm border-2 border-rose-600 text-rose-600 px-8 py-3 text-lg font-medium !rounded-button cursor-pointer whitespace-nowrap hover:bg-rose-50 transition-all transform hover:scale-105">
                 Learn More
               </button>
             </div>
