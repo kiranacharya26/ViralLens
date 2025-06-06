@@ -114,10 +114,85 @@ const Contact: React.FC = () => {
       <Header />
       
       {/* Early Access Form Section */}
-      <section className="pt-36 pb-20 min-h-screen bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-gray-50/50 to-transparent"></div>
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-rose-100/20 to-transparent rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-blue-100/20 to-transparent rounded-full blur-3xl"></div>
+      <section className="pt-36 pb-20 min-h-screen relative overflow-hidden">
+        {/* Background Image Collage */}
+        <div className="absolute inset-0 grid grid-cols-4 grid-rows-3 gap-1 opacity-90">
+          <div
+            className="bg-cover bg-center"
+            style={{
+              backgroundImage: `url('https://readdy.ai/api/search-image?query=elegant%20korean%20beauty%20woman%20glowing%20skin%20applying%20luxury%20facial%20oil%20serum%20professional%20beauty%20photography%20minimalist%20clean%20background%20high%20end%20cosmetic%20campaign%20style%20soft%20lighting%20dreamy%20atmosphere&width=400&height=300&seq=1&orientation=landscape')`,
+            }}
+          ></div>
+          <div
+            className="bg-cover bg-center"
+            style={{
+              backgroundImage: `url('https://readdy.ai/api/search-image?query=young%20asian%20woman%20with%20perfect%20skin%20applying%20moisturizer%20luxury%20skincare%20routine%20professional%20beauty%20photography%20soft%20lighting%20dreamy%20atmosphere%20minimalist%20background&width=400&height=300&seq=2&orientation=landscape')`,
+            }}
+          ></div>
+          <div
+            className="bg-cover bg-center"
+            style={{
+              backgroundImage: `url('https://readdy.ai/api/search-image?query=korean%20model%20close%20up%20portrait%20glowing%20dewy%20skin%20natural%20makeup%20professional%20beauty%20photography%20soft%20ethereal%20lighting%20clean%20background&width=400&height=300&seq=3&orientation=landscape')`,
+            }}
+          ></div>
+          <div
+            className="bg-cover bg-center"
+            style={{
+              backgroundImage: `url('https://readdy.ai/api/search-image?query=elegant%20asian%20beauty%20influencer%20applying%20serum%20droplets%20luxury%20skincare%20routine%20professional%20photography%20soft%20lighting%20minimalist%20studio&width=400&height=300&seq=4&orientation=landscape')`,
+            }}
+          ></div>
+          <div
+            className="bg-cover bg-center"
+            style={{
+              backgroundImage: `url('https://readdy.ai/api/search-image?query=korean%20skincare%20expert%20demonstrating%20facial%20massage%20techniques%20professional%20beauty%20photography%20soft%20lighting%20clean%20background&width=400&height=300&seq=5&orientation=landscape')`,
+            }}
+          ></div>
+          <div
+            className="bg-cover bg-center"
+            style={{
+              backgroundImage: `url('https://readdy.ai/api/search-image?query=luxury%20korean%20beauty%20products%20flatlay%20with%20flowers%20professional%20product%20photography%20soft%20lighting%20marble%20surface&width=400&height=300&seq=6&orientation=landscape')`,
+            }}
+          ></div>
+          <div
+            className="bg-cover bg-center"
+            style={{
+              backgroundImage: `url('https://readdy.ai/api/search-image?query=asian%20beauty%20model%20side%20profile%20perfect%20skin%20professional%20beauty%20photography%20ethereal%20lighting%20minimalist%20background&width=400&height=300&seq=7&orientation=landscape')`,
+            }}
+          ></div>
+          <div
+            className="bg-cover bg-center"
+            style={{
+              backgroundImage: `url('https://readdy.ai/api/search-image?query=korean%20skincare%20routine%20essence%20application%20close%20up%20shot%20professional%20beauty%20photography%20soft%20lighting%20studio&width=400&height=300&seq=8&orientation=landscape')`,
+            }}
+          ></div>
+          <div
+            className="bg-cover bg-center"
+            style={{
+              backgroundImage: `url('https://readdy.ai/api/search-image?query=elegant%20asian%20woman%20beauty%20portrait%20glowing%20skin%20professional%20photography%20dreamy%20atmosphere%20clean%20background&width=400&height=300&seq=9&orientation=landscape')`,
+            }}
+          ></div>
+          <div
+            className="bg-cover bg-center"
+            style={{
+              backgroundImage: `url('https://readdy.ai/api/search-image?query=korean%20beauty%20expert%20facial%20massage%20demonstration%20professional%20photography%20soft%20lighting%20minimalist%20studio&width=400&height=300&seq=10&orientation=landscape')`,
+            }}
+          ></div>
+          <div
+            className="bg-cover bg-center"
+            style={{
+              backgroundImage: `url('https://readdy.ai/api/search-image?query=luxury%20korean%20skincare%20products%20arrangement%20professional%20product%20photography%20soft%20lighting%20clean%20background&width=400&height=300&seq=11&orientation=landscape')`,
+            }}
+          ></div>
+          <div
+            className="bg-cover bg-center"
+            style={{
+              backgroundImage: `url('https://readdy.ai/api/search-image?query=asian%20beauty%20influencer%20skincare%20tutorial%20professional%20beauty%20photography%20ethereal%20lighting%20studio%20setting&width=400&height=300&seq=12&orientation=landscape')`,
+            }}
+          ></div>
+        </div>
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/50 to-transparent"></div>
+        {/* Content */}
         <div className="container mx-auto px-6 relative">
           <div className="max-w-3xl mx-auto backdrop-blur-sm">
             <div className="text-center mb-12">
@@ -383,169 +458,99 @@ const Contact: React.FC = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-gray-400 py-12">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
-            <div>
-              <h3 className="text-white text-lg font-bold mb-4">LunaGlow</h3>
-              <p className="mb-4">
-                Premium Korean skincare essentials for radiant, glowing skin.
-                Discover the beauty secrets of Korea.
-              </p>
-              <div className="flex space-x-4">
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors cursor-pointer"
-                >
-                  <i className="fab fa-facebook-f"></i>
-                </a>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors cursor-pointer"
-                >
-                  <i className="fab fa-twitter"></i>
-                </a>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors cursor-pointer"
-                >
-                  <i className="fab fa-instagram"></i>
-                </a>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors cursor-pointer"
-                >
-                  <i className="fab fa-linkedin-in"></i>
-                </a>
-              </div>
-            </div>
-            <div>
-              <h3 className="text-white text-lg font-bold mb-4">Shop</h3>
-              <ul className="space-y-2">
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-white transition-colors cursor-pointer"
-                  >
-                    All Products
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-white transition-colors cursor-pointer"
-                  >
-                    Best Sellers
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-white transition-colors cursor-pointer"
-                  >
-                    New Arrivals
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-white transition-colors cursor-pointer"
-                  >
-                    Gift Sets
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-white text-lg font-bold mb-4">Support</h3>
-              <ul className="space-y-2">
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-white transition-colors cursor-pointer"
-                  >
-                    Help Center
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-white transition-colors cursor-pointer"
-                  >
-                    Shipping Info
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-white transition-colors cursor-pointer"
-                  >
-                    Returns
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-white transition-colors cursor-pointer"
-                  >
-                    Contact Us
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-white text-lg font-bold mb-4">Company</h3>
-              <ul className="space-y-2">
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-white transition-colors cursor-pointer"
-                  >
-                    About Us
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-white transition-colors cursor-pointer"
-                  >
-                    Sustainability
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-white transition-colors cursor-pointer"
-                  >
-                    Privacy Policy
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-white transition-colors cursor-pointer"
-                  >
-                    Terms of Service
-                  </a>
-                </li>
-              </ul>
-            </div>
+      {/* Features Section with Background Image */}
+      <section className="py-20 relative overflow-hidden">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `url('https://readdy.ai/api/search-image?query=luxury%20korean%20skincare%20products%20arrangement%20with%20flowers%20and%20natural%20elements%20on%20marble%20surface%20professional%20product%20photography%20soft%20lighting%20elegant%20composition%20high%20end%20beauty%20campaign&width=1440&height=800&seq=2&orientation=landscape')`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        ></div>
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-white/40 to-white/90"></div>
+        {/* Content */}
+        <div className="container mx-auto px-6 relative">
+          <div className="text-center mb-16">
+            <span
+              className={`inline-block ${theme.text} text-sm font-semibold tracking-wider uppercase mb-2`}
+            >
+              Why Choose LunaGlow
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+              Experience the Korean Beauty Secret
+            </h2>
+            <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+              Our products combine traditional Korean beauty wisdom with
+              cutting-edge skincare technology for unparalleled results.
+            </p>
           </div>
-          <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p>© 2025 LunaGlow. All rights reserved.</p>
-            <div className="flex items-center mt-4 md:mt-0">
-              <span className="mr-2">Payment methods:</span>
-              <div className="flex space-x-3">
-                <i className="fab fa-cc-visa text-xl"></i>
-                <i className="fab fa-cc-mastercard text-xl"></i>
-                <i className="fab fa-cc-paypal text-xl"></i>
-                <i className="fab fa-cc-apple-pay text-xl"></i>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white/80 backdrop-blur-sm p-8 rounded-xl shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-xl hover:scale-105">
+              <div
+                className={`w-16 h-16 ${theme.bgLightest} rounded-full flex items-center justify-center mb-6`}
+              >
+                <i className={`fas fa-leaf ${theme.text} text-2xl`}></i>
               </div>
+              <h3 className="text-xl font-bold mb-3">
+                Natural Ingredients
+              </h3>
+              <p className="text-gray-600 mb-4">
+                Sourced from pristine Korean landscapes, our ingredients are
+                carefully selected for their purity and effectiveness.
+              </p>
+              <a
+                href="#"
+                className={`inline-flex items-center ${theme.text} font-medium cursor-pointer`}
+              >
+                Learn more <i className="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+            <div className="bg-white/80 backdrop-blur-sm p-8 rounded-xl shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-xl hover:scale-105">
+              <div
+                className={`w-16 h-16 ${theme.bgLightest} rounded-full flex items-center justify-center mb-6`}
+              >
+                <i className={`fas fa-flask ${theme.text} text-2xl`}></i>
+              </div>
+              <h3 className="text-xl font-bold mb-3">
+                Advanced Formulations
+              </h3>
+              <p className="text-gray-600 mb-4">
+                Our team of scientists develops innovative formulas that deliver
+                visible results from the first application.
+              </p>
+              <a
+                href="#"
+                className={`inline-flex items-center ${theme.text} font-medium cursor-pointer`}
+              >
+                Learn more <i className="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+            <div className="bg-white/80 backdrop-blur-sm p-8 rounded-xl shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-xl hover:scale-105">
+              <div
+                className={`w-16 h-16 ${theme.bgLightest} rounded-full flex items-center justify-center mb-6`}
+              >
+                <i className={`fas fa-heart ${theme.text} text-2xl`}></i>
+              </div>
+              <h3 className="text-xl font-bold mb-3">
+                Cruelty-Free Promise
+              </h3>
+              <p className="text-gray-600 mb-4">
+                We're committed to ethical beauty. All our products are
+                cruelty-free and developed with sustainable practices.
+              </p>
+              <a
+                href="#"
+                className={`inline-flex items-center ${theme.text} font-medium cursor-pointer`}
+              >
+                Learn more <i className="fas fa-arrow-right ml-2"></i>
+              </a>
             </div>
           </div>
         </div>
-      </footer>
+      </section>
     </div>
   );
 };
