@@ -1,61 +1,86 @@
-# My React App
+# LunaGlow - Premium Korean Skincare
 
-This is a simple React application initialized with TailwindCSS for styling.
+A modern, responsive web application showcasing premium Korean skincare products with an elegant user interface and seamless user experience.
 
-## Getting Started
+## Overview
 
-To get started with this project, follow the instructions below.
+LunaGlow is a sophisticated e-commerce platform that brings the essence of Korean skincare to users worldwide. The application features a clean, modern design with smooth animations and intuitive navigation, making it easy for users to explore and learn about premium skincare products.
 
-### Prerequisites
+## Design Rationale
 
-Make sure you have the following installed:
+### UX/UI Design
+- Created using [Creatie](https://creatie.com) for modern, responsive design layouts
+- Implemented a clean, minimalist aesthetic with rose-themed color palette
+- Focused on user-friendly navigation and smooth transitions
+- Mobile-first approach with responsive design for all screen sizes
 
-- Node.js (version 14 or higher)
-- npm (comes with Node.js)
+### AI-Generated Assets
+- Product and hero images generated using [Galileo AI](https://galileo.ai) and [DALL-E](https://openai.com/dall-e-2)
+- Images optimized for web performance while maintaining visual quality
+- Consistent visual style across all AI-generated assets
 
-### Installation
+## Setup & Run
 
 1. Clone the repository:
-   ```
-   git clone <repository-url>
-   ```
-
-2. Navigate into the project directory:
-   ```
-   cd my-react-app
-   ```
-
-3. Install the dependencies:
-   ```
-   npm install
-   ```
-
-### Running the Application
-
-To start the development server, run:
-```
-npm start
+```bash
+git clone [repository-url]
+cd lunaglow
 ```
 
-This will start the application and you can view it in your browser at `http://localhost:3000`.
-
-### Building for Production
-
-To create a production build of the application, run:
-```
-npm run build
+2. Install dependencies:
+```bash
+npm install
 ```
 
-This will generate a `build` folder with the optimized production files.
+3. Create a `.env` file in the root directory with the following variables:
+```env
+# Frontend Environment Variables
+VITE_API_URL=your_api_url
+VITE_STRIPE_PUBLIC_KEY=your_stripe_public_key
 
-### Customizing TailwindCSS
+# Backend Environment Variables
+STRIPE_SECRET_KEY=your_stripe_secret_key
+STRIPE_WEBHOOK_SECRET=your_stripe_webhook_secret
+```
 
-You can customize TailwindCSS by modifying the `tailwind.config.js` file. For more information on how to use TailwindCSS, visit the [TailwindCSS documentation](https://tailwindcss.com/docs).
+4. Run the development server:
+```bash
+npm run dev
+```
 
-### Components
+5. For local development with Netlify functions:
+```bash
+npx netlify dev
+```
 
-The main components of the application are located in the `src/components` directory. You can create new components and import them into `App.jsx`.
+## Deployment
 
-### License
+The application is deployed on Netlify and can be accessed at:
+[Your Netlify URL]
 
-This project is licensed under the MIT License.
+### Deployment Features
+- Automatic deployments from main branch
+- Netlify Functions for serverless backend operations
+- Optimized asset delivery with Netlify CDN
+- SSL/TLS encryption enabled
+
+## Tech Stack
+
+- React + TypeScript
+- Tailwind CSS
+- Netlify Functions
+- Stripe Integration
+- React Router
+- Framer Motion
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
