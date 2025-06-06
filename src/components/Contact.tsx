@@ -56,6 +56,9 @@ const Contact: React.FC = () => {
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = "Please enter a valid email address";
     }
+    if (!formData.message.trim()) {
+      newErrors.message = "Message is required";
+    }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -280,10 +283,7 @@ const Contact: React.FC = () => {
                         htmlFor="message"
                         className="block text-gray-700 font-medium mb-2"
                       >
-                        Message{" "}
-                        <span className="text-gray-400 font-normal">
-                          (Optional)
-                        </span>
+                        Message <span className="text-rose-600">*</span>
                       </label>
                       <div className="relative">
                         <div className="absolute top-3 left-3 flex items-start pointer-events-none">
@@ -295,10 +295,20 @@ const Contact: React.FC = () => {
                           value={formData.message}
                           onChange={handleInputChange}
                           rows={4}
-                          className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-opacity-50 focus:border-transparent transition-colors resize-none"
+                          className={`w-full pl-10 pr-4 py-3 border ${
+                            errors.message
+                              ? theme.errorBorder
+                              : "border-gray-300"
+                          } rounded-lg focus:ring-2 focus:ring-opacity-50 focus:border-transparent transition-colors resize-none`}
                           placeholder="Tell us why you're interested in early access"
                         ></textarea>
                       </div>
+                      {errors.message && (
+                        <p className={`mt-2 text-sm ${theme.error}`}>
+                          <i className="fas fa-exclamation-circle mr-1"></i>{" "}
+                          {errors.message}
+                        </p>
+                      )}
                     </div>
                     {errors.submit && (
                       <div
