@@ -53,7 +53,14 @@ const Header: React.FC = () => {
         el.scrollIntoView({ behavior: 'smooth' });
       }
     } else {
-      navigate('/#get-started');
+      navigate('/');
+      // Use setTimeout to ensure the navigation completes before scrolling
+      setTimeout(() => {
+        const el = document.getElementById('get-started');
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
     }
   };
 
@@ -104,13 +111,13 @@ const Header: React.FC = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMobileMenu}
-            className="md:hidden text-gray-700 focus:outline-none"
+            className="md:hidden focus:outline-none p-2"
             aria-label="Open menu"
           >
-            <div className="w-6 h-6 relative">
-              <span className="absolute w-6 h-0.5 bg-current top-2"></span>
-              <span className="absolute w-6 h-0.5 bg-current top-3"></span>
-              <span className="absolute w-6 h-0.5 bg-current top-4"></span>
+            <div className="w-7 h-7 relative">
+              <span className="absolute w-7 h-0.5 bg-rose-600 top-1.5 transition-all duration-300"></span>
+              <span className="absolute w-7 h-0.5 bg-rose-600 top-3.5 transition-all duration-300"></span>
+              <span className="absolute w-7 h-0.5 bg-rose-600 top-5.5 transition-all duration-300"></span>
             </div>
           </button>
         </div>
@@ -134,13 +141,13 @@ const Header: React.FC = () => {
           </Link>
           <button
             onClick={toggleMobileMenu}
-            className="p-5 mr-2 text-gray-600 hover:text-gray-900 focus:outline-none"
+            className="p-2 focus:outline-none"
             aria-label="Close menu"
           >
-            <div className="w-6 h-6 relative">
-              <span className={`absolute w-6 h-0.5 bg-current transform transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 top-3' : 'top-2'}`}></span>
-              <span className={`absolute w-6 h-0.5 bg-current transform transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : 'top-3'}`}></span>
-              <span className={`absolute w-6 h-0.5 bg-current transform transition-all duration-300 ${isMobileMenuOpen ? '-rotate-45 top-3' : 'top-4'}`}></span>
+            <div className="w-7 h-7 relative">
+              <span className={`absolute w-7 h-0.5 bg-rose-600 transform transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 top-3.5' : 'top-1.5'}`}></span>
+              <span className={`absolute w-7 h-0.5 bg-rose-600 transform transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : 'top-3.5'}`}></span>
+              <span className={`absolute w-7 h-0.5 bg-rose-600 transform transition-all duration-300 ${isMobileMenuOpen ? '-rotate-45 top-3.5' : 'top-5.5'}`}></span>
             </div>
           </button>
         </div>
