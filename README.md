@@ -44,7 +44,7 @@ LunaGlow is a sophisticated e-commerce platform that brings the essence of Korea
 - Custom favicon design featuring a moon symbol with rose gradient, representing the brand's identity
 
 ### AI-Generated Assets
-- Product and hero images generated using [Galileo AI](https://galileo.ai) and [DALL-E](https://openai.com/dall-e-2)
+- Product and hero images generated using [Leonardo AI](https://leonardo.ai/) and [DALL-E](https://openai.com/dall-e-2)
 - Images optimized for web performance while maintaining visual quality
 - Consistent visual style across all AI-generated assets
 
