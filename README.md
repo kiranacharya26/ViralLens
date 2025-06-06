@@ -53,7 +53,6 @@ LunaGlow is a sophisticated e-commerce platform that brings the essence of Korea
 ### Frontend
 - React + TypeScript for robust type-safe development
 - Tailwind CSS for utility-first styling
-- Framer Motion for smooth animations
 - React Router for client-side routing
 - Custom favicon implementation with multiple formats:
   - SVG for modern browsers
@@ -157,8 +156,6 @@ The application is deployed on Netlify and can be accessed at:
 - Tailwind CSS
 - Netlify Functions
 - React Router
-- Framer Motion
-- Sharp (for image processing)
 - Node.js
 - Cursor AI (Development Environment)
 - DALL-E & Galileo AI (Asset Generation)
