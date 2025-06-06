@@ -132,5 +132,3 @@ The application is deployed on Netlify and can be accessed at:
 - Framer Motion
 - Node.js
 
-
-This project is licensed under the MIT License - see the LICENSE file for details.
