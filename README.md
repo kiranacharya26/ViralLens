@@ -6,6 +6,34 @@ A modern, responsive web application showcasing premium Korean skincare products
 
 LunaGlow is a sophisticated e-commerce platform that brings the essence of Korean skincare to users worldwide. The application features a clean, modern design with smooth animations and intuitive navigation, making it easy for users to explore and learn about premium skincare products.
 
+## Development Environment
+
+- Built using [Cursor AI](https://cursor.sh) - An AI-powered IDE that enhances development productivity
+- Leveraged AI-assisted coding for rapid prototyping and implementation
+- Utilized Cursor's intelligent code completion and real-time suggestions
+- Integrated AI pair programming for efficient problem-solving
+
+## AI Implementation Details
+
+### Design & Assets
+- Used DALL-E to generate the hero section background image with a soft, ethereal aesthetic
+- Leveraged Galileo AI to create product showcase images with consistent lighting and style
+- Generated custom favicon using AI-assisted design tools
+- Created background image collage for the contact page using AI-generated beauty-themed images
+
+### Development
+- Scaffolded React components using Cursor AI's code generation capabilities
+- Implemented form validation logic with AI-assisted TypeScript typing
+- Generated responsive layout structures using AI suggestions
+- Created reusable UI components with AI-guided best practices
+- Automated favicon generation script using AI-assisted Node.js code
+
+### Code Quality
+- Used AI to implement error handling patterns
+- Generated TypeScript interfaces for API responses
+- Created consistent styling patterns with Tailwind CSS
+- Automated documentation generation
+
 ## Design Rationale
 
 ### UX/UI Design
@@ -130,5 +158,8 @@ The application is deployed on Netlify and can be accessed at:
 - Netlify Functions
 - React Router
 - Framer Motion
+- Sharp (for image processing)
 - Node.js
+- Cursor AI (Development Environment)
+- DALL-E & Galileo AI (Asset Generation)
 
