@@ -17,7 +17,7 @@ LunaGlow is a sophisticated e-commerce platform that brings the essence of Korea
 
 ### Design & Assets
 - Used DALL-E to generate the hero section background image with a soft, ethereal aesthetic
-- Leveraged Galileo AI to create product showcase images with consistent lighting and style
+- Leveraged Leonardo AI to create product showcase images with consistent lighting and style
 - Generated custom favicon using AI-assisted design tools
 - Created background image collage for the contact page using AI-generated beauty-themed images
 
