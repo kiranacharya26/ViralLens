@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -11,6 +11,9 @@ const Header: React.FC = () => {
     text: "text-rose-600",
     hover: "hover:text-rose-600"
   };
+
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,6 +46,17 @@ const Header: React.FC = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const handleGetStarted = () => {
+    if (location.pathname === '/') {
+      const el = document.getElementById('get-started');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      navigate('/#get-started');
+    }
+  };
+
   return (
     <>
       <header
@@ -52,7 +66,9 @@ const Header: React.FC = () => {
       >
         <div className="container mx-auto px-6 flex justify-between items-center">
           <div className="flex items-center">
-            <span className={`text-2xl font-bold ${theme.text}`}>LunaGlow</span>
+            <Link to="/" className={`text-2xl font-bold ${theme.text} hover:opacity-80 transition-opacity`}>
+              LunaGlow
+            </Link>
           </div>
           
           {/* Desktop Navigation */}
@@ -78,7 +94,10 @@ const Header: React.FC = () => {
           </nav>
 
           {/* Desktop CTA Button */}
-          <button className="hidden md:block bg-rose-600 hover:bg-rose-700 text-white px-6 py-2.5 rounded-lg transition-colors">
+          <button
+            className="hidden md:block bg-rose-600 hover:bg-rose-700 text-white px-6 py-2.5 rounded-lg transition-colors"
+            onClick={handleGetStarted}
+          >
             Get Started
           </button>
 
@@ -110,7 +129,9 @@ const Header: React.FC = () => {
         }`}
       >
         <div className="flex justify-between items-center p-6 border-b">
-          <span className={`text-2xl font-bold ${theme.text}`}>LunaGlow</span>
+          <Link to="/" className={`text-2xl font-bold ${theme.text} hover:opacity-80 transition-opacity`} onClick={toggleMobileMenu}>
+            LunaGlow
+          </Link>
           <button
             onClick={toggleMobileMenu}
             className="p-5 mr-2 text-gray-600 hover:text-gray-900 focus:outline-none"

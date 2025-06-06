@@ -2,7 +2,7 @@ import React from 'react';
 
 const CTA: React.FC = () => {
   return (
-    <section className="py-20 bg-gradient-to-br from-rose-900 to-pink-900 text-white relative overflow-hidden">
+    <section id="get-started" className="py-20 bg-gradient-to-br from-rose-900 to-pink-900 text-white relative overflow-hidden">
       <div className="absolute inset-0 opacity-10">
         <div
           className="absolute inset-0"
