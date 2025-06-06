@@ -6,10 +6,10 @@ const Footer: React.FC = () => {
     <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div>
-            <h3 className="text-lg font-semibold mb-4">About Us</h3>
-            <p className="text-gray-400">
-              ViralLens brings you the best in skincare innovation, combining traditional wisdom with modern science.
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold">About Us</h3>
+            <p className="text-gray-300 max-w-xs">
+              Premium Korean skincare essentials for radiant, glowing skin. Discover the beauty secrets of Korea.
             </p>
           </div>
           <div>
@@ -40,8 +40,10 @@ const Footer: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} ViralLens. All rights reserved.</p>
+        <div className="mt-8 pt-8 border-t border-gray-700">
+          <p className="text-center text-gray-400">
+            © 2025 LunaGlow. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

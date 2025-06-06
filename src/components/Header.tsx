@@ -79,34 +79,36 @@ const Header: React.FC = () => {
           </div>
           
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
-            <Link
-              to="/"
-              className={`text-gray-700 ${theme.hover} transition-colors cursor-pointer`}
-            >
-              Home
-            </Link>
-            <Link
-              to="/typography"
-              className={`text-gray-700 ${theme.hover} transition-colors cursor-pointer`}
-            >
-              Typography
-            </Link>
-            <Link
-              to="/contact"
-              className={`text-gray-700 ${theme.hover} transition-colors cursor-pointer`}
-            >
-              Contact
-            </Link>
-          </nav>
+          <div className="hidden md:flex items-center space-x-8">
+            <nav className="flex space-x-8">
+              <Link
+                to="/"
+                className={`text-gray-700 ${theme.hover} transition-colors cursor-pointer`}
+              >
+                Home
+              </Link>
+              <Link
+                to="/typography"
+                className={`text-gray-700 ${theme.hover} transition-colors cursor-pointer`}
+              >
+                Typography
+              </Link>
+              <Link
+                to="/contact"
+                className={`text-gray-700 ${theme.hover} transition-colors cursor-pointer`}
+              >
+                Contact
+              </Link>
+            </nav>
 
-          {/* Desktop CTA Button */}
-          <button
-            className="hidden md:block bg-rose-600 hover:bg-rose-700 text-white px-6 py-2.5 rounded-lg transition-colors"
-            onClick={handleGetStarted}
-          >
-            Get Started
-          </button>
+            {/* Desktop CTA Button */}
+            <button
+              className="bg-rose-600 hover:bg-rose-700 text-white px-6 py-2.5 rounded-lg transition-colors"
+              onClick={handleGetStarted}
+            >
+              Get Started
+            </button>
+          </div>
 
           {/* Mobile Menu Button */}
           <button
