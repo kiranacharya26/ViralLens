@@ -8,6 +8,37 @@ const heroImages = [
 
 const Hero: React.FC = () => {
   const [currentHeroImage, setCurrentHeroImage] = useState(0);
+  const [loadedImages, setLoadedImages] = useState<boolean[]>(Array(heroImages.length).fill(false));
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+
+  // Preload images
+  useEffect(() => {
+    const preloadImages = async () => {
+      const loadPromises = heroImages.map((src, index) => {
+        return new Promise((resolve) => {
+          const img = new Image();
+          img.src = src;
+          img.onload = () => {
+            setLoadedImages(prev => {
+              const newState = [...prev];
+              newState[index] = true;
+              return newState;
+            });
+            resolve(true);
+          };
+          img.onerror = () => {
+            console.error(`Failed to load image ${index}`);
+            resolve(false);
+          };
+        });
+      });
+
+      await Promise.all(loadPromises);
+      setImagesLoaded(true);
+    };
+
+    preloadImages();
+  }, []);
 
   useEffect(() => {
     const heroImageInterval = setInterval(() => {
@@ -20,21 +51,25 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative pt-36 pb-32 md:pt-44 md:pb-44 overflow-hidden">
+    <section className="relative pt-36 pb-32 md:pt-44 md:pb-44 min-h-[90vh] overflow-hidden">
       <div className="absolute inset-0 overflow-hidden">
+        {!imagesLoaded && (
+          <div className="absolute inset-0 bg-gradient-to-r from-rose-50 to-rose-100 animate-pulse"></div>
+        )}
         {heroImages.map((img, index) => (
           <img
             key={index}
             src={img}
             alt={`Korean Beauty Background ${index + 1}`}
+            loading="lazy"
             className={`w-full h-full object-cover object-top absolute transition-opacity duration-1000 ${
-              currentHeroImage === index ? "opacity-100" : "opacity-0"
+              currentHeroImage === index && loadedImages[index] ? "opacity-100" : "opacity-0"
             }`}
           />
         ))}
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent"></div>
       </div>
-      <div className="container mx-auto px-6 relative">
+      <div className="container mx-auto px-6 relative h-full flex items-center">
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 text-center md:text-left mb-12 md:mb-0">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 leading-tight mb-6">
