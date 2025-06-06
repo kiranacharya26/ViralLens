@@ -37,7 +37,7 @@ LunaGlow is a sophisticated e-commerce platform that brings the essence of Korea
 ## Design Rationale
 
 ### UX/UI Design
-- Created using [Creatie](https://creatie.com) for modern, responsive design layouts
+- Created using [Creatie](https://creatie.com)-> [readdy](https://readdy.ai/) for modern, responsive design layouts
 - Implemented a clean, minimalist aesthetic with rose-themed color palette
 - Focused on user-friendly navigation and smooth transitions
 - Mobile-first approach with responsive design for all screen sizes
