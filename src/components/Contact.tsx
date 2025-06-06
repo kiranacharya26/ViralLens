@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Header from "./Header";
 
 const Contact: React.FC = () => {
-  const [activeColorTheme, setActiveColorTheme] = useState("rose");
-  const [fontSize, setFontSize] = useState("medium");
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -17,96 +15,19 @@ const Contact: React.FC = () => {
     "idle" | "success" | "error"
   >("idle");
 
-  const colorThemes = {
-    rose: {
-      primary: "bg-rose-600 hover:bg-rose-700",
-      secondary: "border-rose-600 text-rose-600 hover:bg-rose-50",
-      gradient: "from-rose-600 to-pink-600",
-      bgGradient: "from-rose-50 to-white",
-      darkGradient: "from-rose-900 to-pink-900",
-      text: "text-rose-600",
-      lightText: "text-rose-100",
-      veryLightText: "text-rose-200",
-      bgLight: "bg-rose-100",
-      bgLighter: "bg-rose-50",
-      bgLightest: "bg-rose-100/50",
-      hover: "hover:text-rose-600",
-      error: "text-rose-600",
-      errorBg: "bg-rose-50",
-      errorBorder: "border-rose-300",
-      success: "text-emerald-600",
-      successBg: "bg-emerald-50",
-      successBorder: "border-emerald-300",
-    },
-    emerald: {
-      primary: "bg-emerald-600 hover:bg-emerald-700",
-      secondary: "border-emerald-600 text-emerald-600 hover:bg-emerald-50",
-      gradient: "from-emerald-600 to-teal-600",
-      bgGradient: "from-emerald-50 to-white",
-      darkGradient: "from-emerald-900 to-teal-900",
-      text: "text-emerald-600",
-      lightText: "text-emerald-100",
-      veryLightText: "text-emerald-200",
-      bgLight: "bg-emerald-100",
-      bgLighter: "bg-emerald-50",
-      bgLightest: "bg-emerald-100/50",
-      hover: "hover:text-emerald-600",
-      error: "text-rose-600",
-      errorBg: "bg-rose-50",
-      errorBorder: "border-rose-300",
-      success: "text-emerald-600",
-      successBg: "bg-emerald-50",
-      successBorder: "border-emerald-300",
-    },
-    indigo: {
-      primary: "bg-indigo-600 hover:bg-indigo-700",
-      secondary: "border-indigo-600 text-indigo-600 hover:bg-indigo-50",
-      gradient: "from-indigo-600 to-purple-600",
-      bgGradient: "from-indigo-50 to-white",
-      darkGradient: "from-indigo-900 to-purple-900",
-      text: "text-indigo-600",
-      lightText: "text-indigo-100",
-      veryLightText: "text-indigo-200",
-      bgLight: "bg-indigo-100",
-      bgLighter: "bg-indigo-50",
-      bgLightest: "bg-indigo-100/50",
-      hover: "hover:text-indigo-600",
-      error: "text-rose-600",
-      errorBg: "bg-rose-50",
-      errorBorder: "border-rose-300",
-      success: "text-emerald-600",
-      successBg: "bg-emerald-50",
-      successBorder: "border-emerald-300",
-    },
+  const theme = {
+    primary: "bg-rose-600 hover:bg-rose-700",
+    secondary: "border-rose-600 text-rose-600 hover:bg-rose-50",
+    text: "text-rose-600",
+    error: "text-rose-600",
+    errorBg: "bg-rose-50",
+    errorBorder: "border-rose-300",
+    success: "text-emerald-600",
+    successBg: "bg-emerald-50",
+    successBorder: "border-emerald-300",
+    bgLightest: "bg-rose-100/50",
+    gradient: "from-rose-600 to-pink-600"
   };
-
-  const theme = colorThemes[activeColorTheme as keyof typeof colorThemes];
-
-  const fontSizes = {
-    small: {
-      h1: "text-3xl md:text-4xl lg:text-5xl",
-      h2: "text-2xl md:text-3xl",
-      h3: "text-xl",
-      body: "text-base",
-      small: "text-sm",
-    },
-    medium: {
-      h1: "text-4xl md:text-5xl lg:text-6xl",
-      h2: "text-3xl md:text-4xl",
-      h3: "text-2xl",
-      body: "text-lg",
-      small: "text-base",
-    },
-    large: {
-      h1: "text-5xl md:text-6xl lg:text-7xl",
-      h2: "text-4xl md:text-5xl",
-      h3: "text-3xl",
-      body: "text-xl",
-      small: "text-lg",
-    },
-  };
-
-  const fontSizeTheme = fontSizes[fontSize as keyof typeof fontSizes];
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -189,68 +110,6 @@ const Contact: React.FC = () => {
     <div className="min-h-screen bg-white text-gray-800 font-sans">
       <Header />
       
-      {/* Design System Panel */}
-      <div className="fixed bottom-5 right-5 z-50 bg-white shadow-xl rounded-xl p-4 w-64">
-        <h3 className="font-bold mb-3 text-gray-800">Design System</h3>
-        <div className="mb-4">
-          <p className="text-sm font-medium mb-2">Color Theme</p>
-          <div className="flex space-x-2">
-            <button
-              onClick={() => setActiveColorTheme("rose")}
-              className={`w-8 h-8 rounded-full bg-rose-600 cursor-pointer whitespace-nowrap ${activeColorTheme === "rose" ? "ring-2 ring-offset-2 ring-rose-600" : ""}`}
-              aria-label="Rose theme"
-            ></button>
-            <button
-              onClick={() => setActiveColorTheme("emerald")}
-              className={`w-8 h-8 rounded-full bg-emerald-600 cursor-pointer whitespace-nowrap ${activeColorTheme === "emerald" ? "ring-2 ring-offset-2 ring-emerald-600" : ""}`}
-              aria-label="Emerald theme"
-            ></button>
-            <button
-              onClick={() => setActiveColorTheme("indigo")}
-              className={`w-8 h-8 rounded-full bg-indigo-600 cursor-pointer whitespace-nowrap ${activeColorTheme === "indigo" ? "ring-2 ring-offset-2 ring-indigo-600" : ""}`}
-              aria-label="Indigo theme"
-            ></button>
-          </div>
-        </div>
-        <div>
-          <p className="text-sm font-medium mb-2">Typography Scale</p>
-          <div className="flex justify-between">
-            <button
-              onClick={() => setFontSize("small")}
-              className={`px-3 py-1 text-xs border !rounded-button cursor-pointer whitespace-nowrap ${fontSize === "small" ? `${theme.primary} text-white` : "border-gray-300"}`}
-            >
-              Small
-            </button>
-            <button
-              onClick={() => setFontSize("medium")}
-              className={`px-3 py-1 text-xs border !rounded-button cursor-pointer whitespace-nowrap ${fontSize === "medium" ? `${theme.primary} text-white` : "border-gray-300"}`}
-            >
-              Medium
-            </button>
-            <button
-              onClick={() => setFontSize("large")}
-              className={`px-3 py-1 text-xs border !rounded-button cursor-pointer whitespace-nowrap ${fontSize === "large" ? `${theme.primary} text-white` : "border-gray-300"}`}
-            >
-              Large
-            </button>
-          </div>
-        </div>
-        <div className="mt-4 pt-4 border-t border-gray-200">
-          <div className="grid grid-cols-2 gap-2">
-            <button
-              className={`${theme.primary} text-white px-3 py-1 text-xs !rounded-button cursor-pointer whitespace-nowrap`}
-            >
-              Primary Button
-            </button>
-            <button
-              className={`bg-transparent border-2 ${theme.secondary} px-3 py-1 text-xs !rounded-button cursor-pointer whitespace-nowrap`}
-            >
-              Secondary
-            </button>
-          </div>
-        </div>
-      </div>
-
       {/* Early Access Form Section */}
       <section className="pt-36 pb-20 min-h-screen bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-gray-50/50 to-transparent"></div>
@@ -265,16 +124,15 @@ const Contact: React.FC = () => {
                 Limited Availability
               </span>
               <h1
-                className={`${fontSizeTheme.h1} font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r ${theme.gradient}`}
+                className={`text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r ${theme.gradient}`}
               >
                 Get Early Access
               </h1>
               <p
-                className={`${fontSizeTheme.body} text-gray-600 max-w-2xl mx-auto`}
+                className="text-lg text-gray-600 max-w-2xl mx-auto"
               >
                 Join our exclusive early access program and be among the first
-                to experience our revolutionary Korean beauty products. Limited
-                spots available.
+                to experience our innovative solutions.
               </p>
             </div>
             <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-xl overflow-hidden border border-gray-100 transition-all duration-300 hover:shadow-2xl hover:scale-[1.01]">
@@ -291,7 +149,7 @@ const Contact: React.FC = () => {
                         <i className="fas fa-check text-2xl"></i>
                       </div>
                     </div>
-                    <h3 className={`${fontSizeTheme.h3} font-bold mb-2`}>
+                    <h3 className={`${theme.text} font-bold mb-2`}>
                       Thank You!
                     </h3>
                     <p className="mb-0">
@@ -310,8 +168,8 @@ const Contact: React.FC = () => {
                           Full Name <span className="text-rose-600">*</span>
                         </label>
                         <div className="relative">
-                          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                            <i className="fas fa-user text-gray-400"></i>
+                          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none z-10">
+                            <i className="fas fa-user text-gray-400 text-base" style={{ opacity: 1 }}></i>
                           </div>
                           <input
                             type="text"
@@ -396,7 +254,7 @@ const Contact: React.FC = () => {
                           htmlFor="company"
                           className="block text-gray-700 font-medium mb-2"
                         >
-                          Company/Organization{" "}
+                          Company{" "}
                           <span className="text-gray-400 font-normal">
                             (Optional)
                           </span>
@@ -428,7 +286,7 @@ const Contact: React.FC = () => {
                         </span>
                       </label>
                       <div className="relative">
-                        <div className="absolute top-3 left-3 pointer-events-none">
+                        <div className="absolute top-3 left-3 flex items-start pointer-events-none">
                           <i className="fas fa-comment text-gray-400"></i>
                         </div>
                         <textarea
@@ -437,65 +295,40 @@ const Contact: React.FC = () => {
                           value={formData.message}
                           onChange={handleInputChange}
                           rows={4}
-                          className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-opacity-50 focus:border-transparent transition-colors"
+                          className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-opacity-50 focus:border-transparent transition-colors resize-none"
                           placeholder="Tell us why you're interested in early access"
                         ></textarea>
                       </div>
                     </div>
-                    <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                      <div className="text-sm text-gray-500">
-                        <span className="text-rose-600">*</span> Required fields
+                    {errors.submit && (
+                      <div
+                        className={`${theme.errorBg} border ${theme.errorBorder} rounded-lg p-4 text-sm ${theme.error}`}
+                      >
+                        <i className="fas fa-exclamation-circle mr-2"></i>
+                        {errors.submit}
                       </div>
-                      {errors.submit && (
-                        <div className={`${theme.errorBg} ${theme.error} border ${theme.errorBorder} rounded-lg p-3 text-sm mb-4 w-full`}>
-                          <i className="fas fa-exclamation-circle mr-2"></i>
-                          {errors.submit}
-                        </div>
-                      )}
+                    )}
+                    <div className="flex justify-center">
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className={`${theme.primary} text-white px-8 py-3 !rounded-button cursor-pointer whitespace-nowrap transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center min-w-[180px] relative overflow-hidden group`}
+                        className={`${theme.primary} text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-opacity-50 focus:ring-rose-500 disabled:opacity-50 disabled:cursor-not-allowed`}
                       >
-                        <div className="absolute inset-0 bg-black/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-                        <div className="relative">
-                          {isSubmitting ? (
-                            <>
-                              <i className="fas fa-circle-notch fa-spin mr-2"></i>
-                              Processing...
-                            </>
-                          ) : (
-                            <>
-                              Request Access
-                              <i className="fas fa-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
-                            </>
-                          )}
-                        </div>
+                        {isSubmitting ? (
+                          <span className="flex items-center">
+                            <i className="fas fa-spinner fa-spin mr-2"></i>
+                            Submitting...
+                          </span>
+                        ) : (
+                          "Request Early Access"
+                        )}
                       </button>
                     </div>
                   </form>
                 )}
-                <div className="mt-8 pt-6 border-t border-gray-200">
-                  <p className="text-sm text-gray-500 text-center">
-                    By submitting this form, you agree to our{" "}
-                    <a
-                      href="#"
-                      className={`${theme.text} hover:underline cursor-pointer`}
-                    >
-                      Privacy Policy
-                    </a>{" "}
-                    and{" "}
-                    <a
-                      href="#"
-                      className={`${theme.text} hover:underline cursor-pointer`}
-                    >
-                      Terms of Service
-                    </a>
-                    .
-                  </p>
-                </div>
               </div>
             </div>
+
             <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
               <div className="bg-white/90 backdrop-blur-sm p-8 rounded-xl shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:bg-white">
                 <div
@@ -509,13 +342,12 @@ const Contact: React.FC = () => {
                   membership.
                 </p>
               </div>
-              <div className="bg-white p-6 rounded-xl shadow-md">
+
+              <div className="bg-white/90 backdrop-blur-sm p-8 rounded-xl shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:bg-white">
                 <div
                   className={`w-12 h-12 ${theme.bgLightest} rounded-full flex items-center justify-center mx-auto mb-4`}
                 >
-                  <i
-                    className={`fas fa-calendar-alt ${theme.text} text-xl`}
-                  ></i>
+                  <i className={`fas fa-calendar-alt ${theme.text} text-xl`}></i>
                 </div>
                 <h3 className="font-bold mb-2">First to Know</h3>
                 <p className="text-gray-600">
@@ -523,7 +355,8 @@ const Contact: React.FC = () => {
                   released.
                 </p>
               </div>
-              <div className="bg-white p-6 rounded-xl shadow-md">
+
+              <div className="bg-white/90 backdrop-blur-sm p-8 rounded-xl shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:bg-white">
                 <div
                   className={`w-12 h-12 ${theme.bgLightest} rounded-full flex items-center justify-center mx-auto mb-4`}
                 >
