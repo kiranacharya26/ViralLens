@@ -139,13 +139,28 @@ const Contact: React.FC = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (validateForm()) {
       setIsSubmitting(true);
-      // Simulate API call
-      setTimeout(() => {
-        setIsSubmitting(false);
+      try {
+        const response = await fetch('/.netlify/functions/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: formData.fullName,
+            email: formData.email,
+            message: formData.message || 'No message provided',
+          }),
+        });
+
+        if (!response.ok) {
+          const errorData = await response.json();
+          throw new Error(errorData.error || 'Failed to submit form');
+        }
+
         setSubmitStatus("success");
         // Reset form after successful submission
         setTimeout(() => {
@@ -158,7 +173,15 @@ const Contact: React.FC = () => {
           });
           setSubmitStatus("idle");
         }, 3000);
-      }, 1500);
+      } catch (error) {
+        console.error('Error submitting form:', error);
+        setSubmitStatus("error");
+        setErrors({
+          submit: error instanceof Error ? error.message : 'Failed to submit form',
+        });
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
 
@@ -423,6 +446,12 @@ const Contact: React.FC = () => {
                       <div className="text-sm text-gray-500">
                         <span className="text-rose-600">*</span> Required fields
                       </div>
+                      {errors.submit && (
+                        <div className={`${theme.errorBg} ${theme.error} border ${theme.errorBorder} rounded-lg p-3 text-sm mb-4 w-full`}>
+                          <i className="fas fa-exclamation-circle mr-2"></i>
+                          {errors.submit}
+                        </div>
+                      )}
                       <button
                         type="submit"
                         disabled={isSubmitting}
