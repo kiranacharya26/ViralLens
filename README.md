@@ -158,5 +158,5 @@ The application is deployed on Netlify and can be accessed at:
 - React Router
 - Node.js
 - Cursor AI (Development Environment)
-- DALL-E & Galileo AI (Asset Generation)
+- DALL-E & Leonardo AI (Asset Generation)
 
